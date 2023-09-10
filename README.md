@@ -1,7 +1,7 @@
 <div align="center">
   <br />
   <p>
-    <a href="https://api2.rambot.xyz"><img src="https://gamearoo.top/ram/ramapijs.png" width="546" alt="ram-api.js" /></a>
+    <a href="https://api2.rambot.xyz"><img src="https://gamearoo.top/ram/ramapi2js.png" width="546" alt="ram-api.js" /></a>
   </p>
   <br />
   <p>
