@@ -13,10 +13,17 @@
   "keywords": [
     "ram-api2"
   ],
-  "author": "gamearoo",
+  "author": "Gamearoo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ram-Bot-Development/ram-api2.js/issues"
   },
-  "homepage": "https://github.com/Ram-Bot-Development/ram-api2.js#readme"
+  "homepage": "https://github.com/Ram-Bot-Development/ram-api2.js#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "simply-logger": "^1.5.38"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
+  }
 }
