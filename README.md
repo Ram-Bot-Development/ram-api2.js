@@ -17,17 +17,47 @@
 
 We understand using ram api 2 can be hard as it has alot this package calls the api for you however this wont bypass the ratelimit youll still see the ratelimit error
 
+v0.x.x are dev builds for v1.0.0 but are marked as final for npm reasons
+
 > Install
 
 `npm i ram-api2.js` or `yarn add ram-api2.js`
 
-> api key
-
-for a api key join the discord and go to #request-api-keys https://discord.gg/q3ycRjBG9q
-
-> Login
-
 > Examples
+
+```javascript
+//typescript
+import * as ramapi2 from "ram-api2.js";
+//javascript
+const ramapi2 = require("ram-api2.js");
+
+let token = "token here";
+
+new ramapi2.tokenAsync()
+  .loginAsync("test", "test")
+  .then((data) => console.log(data)) //data = {success, token, Notice}
+  .catch((err) => {});
+
+new ramapi2.tokenAsync()
+  .signupAsync("test", "test")
+  .then((data) => console.log(data)) // data =  {success, token, Notice}
+  .catch((err) => {});
+
+new ramapi2.funAsync(token)
+  .birthdayAsync()
+  .then((data) => console.log(data)) // data = {text, imageURL}
+  .then((err) => {});
+
+new ramapi2.funAsync(token)
+  .helloAsync()
+  .then((data) => console.log(data)) // data = {text, imageURL}
+  .then((err) => {});
+
+new ramapi2.imageAsync(token)
+  .nekoparaAsync()
+  .then((data) => console.log(data))
+  .catch((err) => {});
+```
 
 > Missing endpoint
 
