@@ -51,6 +51,43 @@ export class imageAsync {
   constructor(token: string) {
     this.token = token;
   }
+  ramAsync(version?: string): Promise<{imageURL: string}> {
+    return new Promise(async (resolve, reject) => {
+      let baseUrl = "https://api2.rambot.xyz/rem"
+
+      if(version) baseUrl = baseUrl + `?versionOverride=${version}`
+
+      await axios.get(baseUrl, {headers: {"Authorization": `Bearer ${this.token}`}}).then((data) => {
+        if(data.data.error) {
+          logger.error(data.data.error || data.data, "ram-api2")
+          logger.error("ram-api2 ran into a problem", "ram-api2.js")
+          reject(data.data.error)
+          return;
+        }
+          resolve(data.data);
+      }).catch((error) => {
+        if(error.response.data === "Forbidden") {
+          logger.error("Invalid Token", "ram-api2");
+        logger.error("ram-api2 ran into a fatal error", "ram-api2.js");
+        
+        reject(error.response.data)
+       
+
+        } else {
+         
+          logger.error(error.response.data.error || error.response.data, "ram-api2");
+          logger.error("ram-api2 ran into a error", "ram-api2.js");
+          
+          reject(error.response.data)
+          
+        
+        }
+
+
+        
+      })
+    })
+  }
   remAsync(version?: string): Promise<{imageURL: string}> {
     return new Promise(async (resolve, reject) => {
       let baseUrl = "https://api2.rambot.xyz/rem"

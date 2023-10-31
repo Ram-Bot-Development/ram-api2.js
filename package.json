@@ -1,6 +1,6 @@
 {
   "name": "ram-api2.js",
-  "version": "0.1.0",
+  "version": "1.0.0-dev.1",
   "description": "a package for ram-api2",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
